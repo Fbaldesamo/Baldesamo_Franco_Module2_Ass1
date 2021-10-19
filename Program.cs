@@ -4,32 +4,36 @@ namespace Baldesamo_Franco_Module2_Ass1
 {
     internal class Program
     {
-        class Add
+        private class Add
         {
+            //polymor has been used here
             public static double Compute(double a, double b, double c, double d, double e)
             {
-                 double total = a + b + c + d + e;
+                double a1 = a;
+                double a2 = b;
+                double a3 = c;
+                double a4 = d;
+                double a5 = e;
+
+                double total = a1 + a2 + a3 + a4 + a5;
 
                 return total;
             }
-
-
-
         }
-        class Product : Add
+
+        private class Product : Add
         {
-            public static double Compute()
+            //polymore has been used here
+            public static double Compute(double a1, double a2, double a3, double a4, double a5)
             {
-                double total = a * b;
+                double total = (a1 * a2 * a3 * a4 * a5);
 
                 return total;
             }
-
-
         }
+
         private static void Main(string[] args)
         {
-         
             //for how many can be inputted
             int userint = 0;
 
@@ -52,17 +56,17 @@ namespace Baldesamo_Franco_Module2_Ass1
             Console.Clear(); //clean all the input
             if (userint == 5)
             {
-                
-                    foreach (int number in uservals)
-                    {
-                        Console.WriteLine("Your Input Number: "+ number);
-                    }
-                
-                
+                foreach (int number in uservals)
+                {
+                    Console.WriteLine("Your Input Number: " + number);
+                }
             }
             //add total = new add();
-            Add.Compute(uservals[0], uservals[1], uservals[2], uservals[3], uservals[4]);
-
+            double ct = Add.Compute(uservals[0], uservals[1], uservals[2], uservals[3], uservals[4]);
+            Console.WriteLine("Total of all num: " + ct);
+            //multiply
+            double cp = Product.Compute(uservals[0], uservals[1], uservals[2], uservals[3], uservals[4]);
+            Console.WriteLine("Product of all num: " + cp);
 
             Console.ReadKey();
         }
